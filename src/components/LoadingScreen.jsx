@@ -1,4 +1,4 @@
-import React from "react";
+import logo from "../assets/logo.png"; // path adjust
 
 const LoadingScreen = () => {
   return (
@@ -6,7 +6,7 @@ const LoadingScreen = () => {
                     bg-gradient-to-br from-violet-600 to-purple-700 text-white z-50">
 
       <img
-        src="/src/assets/logo.png"
+        src={logo}
         alt="Logo"
         className="w-20 h-20 mb-6 animate-bounce"
       />
