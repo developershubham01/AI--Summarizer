@@ -1,0 +1,70 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-gradient-to-br from-violet-50 to-white dark:from-gray-900 dark:to-violet-950;
+    @apply text-gray-900 dark:text-gray-100;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-violet-100 dark:bg-violet-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-violet-400 dark:bg-violet-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-violet-500 dark:bg-violet-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border border-white/20 dark:border-gray-700/50 shadow-2xl;
+  }
+
+  .gradient-border {
+    @apply relative;
+    background: linear-gradient(45deg, #8b5cf6, #c4b5fd, #8b5cf6);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-500 to-purple-500 blur opacity-30;
+    z-index: -1;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl 
+           hover:from-violet-700 hover:to-purple-700 transform hover:-translate-y-0.5 
+           transition-all duration-200 shadow-lg hover:shadow-violet-500/30 
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/10 dark:bg-gray-800/50 text-violet-700 dark:text-violet-300 
+           font-semibold rounded-xl hover:bg-white/20 dark:hover:bg-gray-700/50 
+           border border-violet-200 dark:border-violet-800 
+           transition-all duration-200;
+  }
+}
