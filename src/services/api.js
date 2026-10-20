@@ -1,6 +1,6 @@
 const RAPIDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
-const RAPIDAPI_HOST = 'article-extractor-and-summarizer.p.rapidapi.com';
-const BASE_URL = 'https://article-extractor-and-summarizer.p.rapidapi.com';
+const RAPIDAPI_HOST = 'chatgpt-42.p.rapidapi.com';
+const BASE_URL = 'https://chatgpt-42.p.rapidapi.com';
 
 export class ArticleSummarizerAPI {
   constructor() {
